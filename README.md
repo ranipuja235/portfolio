@@ -2,6 +2,8 @@
 
 Live Site: https://ranipuja235.github.io/portfolio/
 
+## Developer Portfolio
+
 A modern developer portfolio built with React and Vite on the frontend, and Node.js with Express on the backend.
 
 ## Project Structure
