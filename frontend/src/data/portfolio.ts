@@ -92,7 +92,7 @@ export const projects: Project[] = [
     description:
       'Developed responsive HR workflows for employee management, attendance, permissions, and admin operations with a clean, role-aware interface.',
     techStack: ['React.js', 'TypeScript', 'Redux', 'REST APIs'],
-    githubUrl: 'https://github.com/',
+    // githubUrl: 'https://github.com/',
     liveUrl: 'https://kemsys-timelog.azurewebsites.net',
     highlight: 'Built modular UI flows with role-based access and API-driven forms.',
   },
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     description:
       'Created a real-time dashboard experience for connected device monitoring with status indicators, live metrics, and operational visibility.',
     techStack: ['React.js', 'TypeScript', 'React Query', 'REST APIs'],
-    githubUrl: 'https://github.com/',
+    // githubUrl: 'https://github.com/',
     liveUrl: 'https://kemsys.com/',
     highlight: 'Improved data handling and UI responsiveness for live IoT monitoring use cases.',
   },
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     description:
       'Designed monitoring interfaces for vehicle tracking, status insights, and operational visibility with reusable widgets and filterable views.',
     techStack: ['React.js', 'JavaScript', 'Tailwind CSS', 'JWT Auth'],
-    githubUrl: 'https://github.com/',
+    // githubUrl: 'https://github.com/',
     liveUrl: 'https://kemsys.com/',
     highlight: 'Focused on dashboard usability, secure access flows, and performance optimization.',
   },

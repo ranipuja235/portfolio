@@ -1,31 +1,40 @@
-import { FiActivity, FiBriefcase, FiExternalLink, FiGithub, FiMap } from 'react-icons/fi'
-import type { Project } from '../types'
-import { SectionHeading } from './SectionHeading'
+import {
+  FiActivity,
+  FiBriefcase,
+  FiExternalLink,
+  FiGithub,
+  FiMap,
+} from "react-icons/fi";
+import type { Project } from "../types";
+import { SectionHeading } from "./SectionHeading";
 
 type ProjectsSectionProps = {
-  projects: Project[]
-}
+  projects: Project[];
+};
 
 const projectStyles = {
   enterprise: {
-    label: 'Enterprise Product',
+    label: "Enterprise Product",
     icon: FiBriefcase,
-    gradient: 'from-cyan-500 via-sky-500 to-blue-600',
-    glow: 'bg-cyan-400/25',
+    gradient: "from-cyan-500 via-sky-500 to-blue-600",
+    glow: "bg-cyan-400/25",
   },
   iot: {
-    label: 'IoT Platform',
+    label: "IoT Platform",
     icon: FiActivity,
-    gradient: 'from-emerald-400 via-cyan-500 to-sky-600',
-    glow: 'bg-emerald-300/20',
+    gradient: "from-emerald-400 via-cyan-500 to-sky-600",
+    glow: "bg-emerald-300/20",
   },
   mobility: {
-    label: 'Mobility System',
+    label: "Mobility System",
     icon: FiMap,
-    gradient: 'from-fuchsia-500 via-violet-500 to-indigo-600',
-    glow: 'bg-fuchsia-300/20',
+    gradient: "from-fuchsia-500 via-violet-500 to-indigo-600",
+    glow: "bg-fuchsia-300/20",
   },
-} satisfies Record<Project['category'], { label: string; icon: typeof FiGithub; gradient: string; glow: string }>
+} satisfies Record<
+  Project["category"],
+  { label: string; icon: typeof FiGithub; gradient: string; glow: string }
+>;
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
@@ -43,21 +52,25 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         </div>
 
         <div className="grid gap-6 px-2 md:px-3 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project, index) => (
+          {projects.map((project, index) =>
             (() => {
-              const projectStyle = projectStyles[project.category]
-              const ProjectIcon = projectStyle.icon
+              const projectStyle = projectStyles[project.category];
+              const ProjectIcon = projectStyle.icon;
 
               return (
                 <article
                   key={project.title}
-                  className={`project-showcase reveal-on-scroll ${index % 2 === 0 ? 'reveal-left' : 'reveal-right'} relative flex h-full flex-col overflow-hidden rounded-[28px] border border-[#2a2d3e] bg-[#1a1d27] transition duration-300 hover:-translate-y-1.5 hover:border-[#00d4ff]/60 ${index === 1 ? 'reveal-delay-1' : ''} ${
-                    index === 2 ? 'reveal-delay-2' : ''
+                  className={`project-showcase reveal-on-scroll ${index % 2 === 0 ? "reveal-left" : "reveal-right"} relative flex h-full flex-col overflow-hidden rounded-[28px] border border-[#2a2d3e] bg-[#1a1d27] transition duration-300 hover:-translate-y-1.5 hover:border-[#00d4ff]/60 ${index === 1 ? "reveal-delay-1" : ""} ${
+                    index === 2 ? "reveal-delay-2" : ""
                   }`}
                 >
-                  <div className={`relative h-[168px] overflow-hidden bg-gradient-to-br ${projectStyle.gradient}`}>
+                  <div
+                    className={`relative h-[168px] overflow-hidden bg-gradient-to-br ${projectStyle.gradient}`}
+                  >
                     <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_42%,rgba(10,14,22,0.24))]" />
-                    <div className={`absolute -right-10 top-6 h-32 w-32 rounded-full ${projectStyle.glow} blur-3xl`} />
+                    <div
+                      className={`absolute -right-10 top-6 h-32 w-32 rounded-full ${projectStyle.glow} blur-3xl`}
+                    />
                     <div className="absolute left-5 top-5 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
                       {projectStyle.label}
                     </div>
@@ -79,7 +92,9 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                   </div>
 
                   <div className="flex flex-1 flex-col p-5 md:p-6">
-                    <h3 className="text-[18px] font-bold leading-7 text-white">{project.title}</h3>
+                    <h3 className="text-[18px] font-bold leading-7 text-white">
+                      {project.title}
+                    </h3>
                     <p className="mt-3 overflow-hidden text-[15px] leading-7 text-slate-300 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
                       {project.description}
                     </p>
@@ -96,7 +111,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     </div>
 
                     <div className="mt-auto flex flex-wrap gap-3 pt-5">
-                      <a
+                      {/* <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
@@ -104,7 +119,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                       >
                         <FiGithub size={16} />
                         GitHub
-                      </a>
+                      </a> */}
                       <a
                         href={project.liveUrl}
                         target="_blank"
@@ -117,11 +132,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     </div>
                   </div>
                 </article>
-              )
-            })()
-          ))}
+              );
+            })(),
+          )}
         </div>
       </div>
     </section>
-  )
+  );
 }
